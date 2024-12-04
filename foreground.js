@@ -1,18 +1,12 @@
-// This script gets injected into any opened page
-// whose URL matches the pattern defined in the manifest
-// (see "content_script" key).
-// Several foreground scripts can be declared
-// and injected into the same or different pages.
-
 const newElement = document.createElement("div");
 newElement.className = 'parent';
 
 const childElement = document.createElement("span");
 childElement.className = 'brook brook-after';
 
-newElement.appendChild(childElement); 
+newElement.appendChild(childElement);
 const newContent = document.createTextNode("検証環境");
-childElement.appendChild(newContent); 
+childElement.appendChild(newContent);
 
 newElement.style.position = 'absolute';
 newElement.style.top = '0';
@@ -20,8 +14,8 @@ newElement.style.left = '0';
 newElement.style.width = '250px';
 newElement.style.height = '250px'
 newElement.style.transform = 'rotateZ(-52deg)';
-newElement.style.zIndex = '1000';
-//newElement.style.overflow = 'hidden';
+newElement.style.zIndex = '2147483647';
+newElement.style.overflow = 'hidden';
 
 childElement.style.textAlign = 'center';
 childElement.style.display = 'block'
